@@ -1,0 +1,322 @@
+/* ============================================
+   PUBLIC / GUEST SITE THEME
+   Light cream luxury — classic hotel aesthetic
+   ============================================ */
+
+.public-site {
+  --pub-bg: #faf7f2;
+  --pub-bg-warm: #f5f0e8;
+  --pub-bg-card: #ffffff;
+  --pub-surface: #f0ebe0;
+  --pub-gold: #b8863a;
+  --pub-gold-dark: #8a6225;
+  --pub-gold-light: #d4a85c;
+  --pub-charcoal: #1a1a1a;
+  --pub-ink: #2c2c2c;
+  --pub-muted: #6b6457;
+  --pub-dim: #a09484;
+  --pub-border: rgba(184, 134, 58, 0.2);
+  --pub-border-strong: rgba(184, 134, 58, 0.45);
+  --pub-shadow: rgba(44, 35, 20, 0.08);
+  --pub-shadow-md: rgba(44, 35, 20, 0.14);
+  --pub-shadow-lg: rgba(44, 35, 20, 0.2);
+
+  background-color: var(--pub-bg);
+  color: var(--pub-ink);
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+/* Public typography */
+.public-site h1,
+.public-site h2,
+.public-site h3,
+.public-site h4 {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  color: var(--pub-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.public-site p,
+.public-site span,
+.public-site button,
+.public-site input,
+.public-site label {
+  font-family: 'Jost', sans-serif;
+}
+
+/* Public scrollbar */
+.public-site ::-webkit-scrollbar { width: 5px; }
+.public-site ::-webkit-scrollbar-track { background: var(--pub-bg-warm); }
+.public-site ::-webkit-scrollbar-thumb { background: var(--pub-gold-light); border-radius: 3px; }
+
+/* ---- Components ---- */
+
+/* Navbar */
+.pub-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 4rem;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--pub-border);
+  transition: all 0.3s ease;
+}
+
+.pub-nav.scrolled {
+  padding: 0.875rem 4rem;
+  box-shadow: 0 2px 20px var(--pub-shadow);
+}
+
+/* Pub card */
+.pub-card {
+  background: var(--pub-bg-card);
+  border: 1px solid var(--pub-border);
+  border-radius: 4px;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.pub-card:hover {
+  box-shadow: 0 12px 40px var(--pub-shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--pub-border-strong);
+}
+
+/* Pub button primary */
+.pub-btn {
+  background: var(--pub-charcoal);
+  color: var(--pub-bg);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pub-btn:hover {
+  background: var(--pub-gold-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--pub-shadow-md);
+}
+
+/* Pub button outline */
+.pub-btn-outline {
+  background: transparent;
+  color: var(--pub-charcoal);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  border: 1px solid var(--pub-charcoal);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pub-btn-outline:hover {
+  background: var(--pub-charcoal);
+  color: var(--pub-bg);
+}
+
+/* Pub gold accent btn */
+.pub-btn-gold {
+  background: linear-gradient(135deg, var(--pub-gold-dark), var(--pub-gold), var(--pub-gold-light));
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pub-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,134,58,0.4);
+}
+
+/* Pub input */
+.pub-input {
+  background: #fff;
+  border: 1px solid var(--pub-border);
+  border-radius: 2px;
+  color: var(--pub-ink);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.875rem 1.125rem;
+  width: 100%;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.pub-input:focus {
+  border-color: var(--pub-gold);
+  box-shadow: 0 0 0 3px rgba(184, 134, 58, 0.12);
+}
+
+.pub-input::placeholder { color: var(--pub-dim); }
+.pub-input.error { border-color: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,0.08); }
+
+/* Pub select */
+.pub-select {
+  background: #fff;
+  border: 1px solid var(--pub-border);
+  border-radius: 2px;
+  color: var(--pub-ink);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.875rem 1.125rem;
+  width: 100%;
+  transition: all 0.25s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+.pub-select:focus {
+  border-color: var(--pub-gold);
+  box-shadow: 0 0 0 3px rgba(184, 134, 58, 0.12);
+}
+
+/* Pub divider */
+.pub-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pub-gold-light), transparent);
+  margin: 2rem 0;
+  opacity: 0.6;
+}
+
+/* Pub label */
+.pub-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pub-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Room badge */
+.pub-badge {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--pub-border-strong);
+  border-radius: 999px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pub-gold-dark);
+  background: rgba(184,134,58,0.08);
+}
+
+.pub-badge-available {
+  color: #2a7d4f;
+  background: rgba(42,125,79,0.08);
+  border-color: rgba(42,125,79,0.3);
+}
+
+/* Section title */
+.pub-section-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pub-gold);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Decorative rule */
+.pub-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.pub-rule::before,
+.pub-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--pub-border);
+}
+
+/* Price display */
+.pub-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--pub-gold-dark);
+  line-height: 1;
+}
+
+.pub-price sup {
+  font-size: 1rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  vertical-align: top;
+  margin-top: 0.3rem;
+  display: inline-block;
+}
+
+.pub-price span {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--pub-muted);
+  margin-left: 0.25rem;
+}
+
+/* Texture overlay for public */
+.pub-texture {
+  position: relative;
+}
+.pub-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='%23b8863a' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pub-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pub-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pub-animate { animation: pub-fade-up 0.7s ease forwards; }
+.pub-animate-slow { animation: pub-fade-up 1s ease forwards; }
+.pub-fade { animation: pub-fade-in 0.5s ease forwards; }
