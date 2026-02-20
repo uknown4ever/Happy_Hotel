@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import '@/app/public.css'
+import './public.css'
+
 import { isGuestAuthenticated, getGuestUser, clearGuestAuth } from '@/lib/guestAuth'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
